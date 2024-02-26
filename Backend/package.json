@@ -1,0 +1,37 @@
+{
+	"name": "mi_blog",
+	"version": "1.0.0",
+	"description": "blog web_site",
+	"main": "index.js",
+	"scripts": {
+		"start:dev": "nodemon --env-file=.env index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lokmanzeddoun/mi_blog.git"
+	},
+	"keywords": [
+		"mern[MySql",
+		"Express",
+		"Node",
+		"React]"
+	],
+	"author": "LokmaneZeddoun",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/lokmanzeddoun/mi_blog/issues"
+	},
+	"homepage": "https://github.com/lokmanzeddoun/mi_blog#readme",
+	"dependencies": {
+		"express": "^4.18.2",
+		"joi": "^17.12.1",
+		"morgan": "^1.10.0",
+		"mysql2": "^3.9.1",
+		"sequelize": "^6.36.0",
+		"xss": "^1.0.14"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.3"
+	}
+}
