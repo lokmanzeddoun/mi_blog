@@ -24,12 +24,22 @@
 	},
 	"homepage": "https://github.com/lokmanzeddoun/mi_blog#readme",
 	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cloudinary": "^2.0.1",
+		"cors": "^2.8.5",
 		"express": "^4.18.2",
+		"express-async-handler": "^1.2.0",
+		"express-rate-limit": "^7.1.5",
+		"helmet": "^7.1.0",
+		"hpp": "^0.2.3",
 		"joi": "^17.12.1",
+		"joi-password-complexity": "^5.2.0",
+		"jsonwebtoken": "^9.0.2",
 		"morgan": "^1.10.0",
+		"multer": "^1.4.5-lts.1",
 		"mysql2": "^3.9.1",
 		"sequelize": "^6.36.0",
-		"xss": "^1.0.14"
+		"xss-clean": "^0.1.4"
 	},
 	"devDependencies": {
 		"nodemon": "^3.0.3"
