@@ -18,4 +18,4 @@ function signInValidation(obj) {
 	return schema.validate(obj);
 }
 
-modules.export = { signInValidation, signUpValidation };
+module.exports = { signInValidation, signUpValidation };
