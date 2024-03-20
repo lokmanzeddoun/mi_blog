@@ -4,8 +4,9 @@ const passwordComplexity = require("joi-password-complexity");
 function signUpValidation(obj) {
 	const schema = Joi.object({
 		username: Joi.string().alphanum().trim().min(2).max(100).required(),
-		email: Joi.string().trim().min(5).max(100).required().email(),
+		email: Joi.string().trim().min(5).max(100).email().required(),
 		password: passwordComplexity().required(),
+		confirmPassword: Joi.ref("password"),
 	});
 	return schema.validate(obj);
 }
@@ -18,4 +19,36 @@ function signInValidation(obj) {
 	return schema.validate(obj);
 }
 
-module.exports = { signInValidation, signUpValidation };
+// Validate Update User
+function validateUpdateUser(obj) {
+	const schema = Joi.object({
+		username: Joi.string().trim().min(2).max(100),
+		password: passwordComplexity(),
+		bio: Joi.string(),
+	});
+	return schema.validate(obj);
+}
+
+// Validate Email
+function validateEmail(obj) {
+	const schema = Joi.object({
+		email: Joi.string().trim().min(5).max(100).required().email(),
+	});
+	return schema.validate(obj);
+}
+
+// Validate New Password
+function validateNewPassword(obj) {
+	const schema = Joi.object({
+		password: passwordComplexity().required(),
+	});
+	return schema.validate(obj);
+}
+
+module.exports = {
+	signInValidation,
+	signUpValidation,
+	validateEmail,
+	validateNewPassword,
+	validateUpdateUser,
+};
