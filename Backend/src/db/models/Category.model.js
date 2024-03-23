@@ -1,11 +1,11 @@
 const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize) => {
-	sequelize.define("Category",{
+module.exports =  (sequelize) => {
+	sequelize.define("Category", {
 		user: {
 			type: DataTypes.INTEGER,
 			references: {
-				model: "User",
+				model: "Users",
 				key: "id",
 			},
 		},
@@ -23,5 +23,5 @@ module.exports = (sequelize) => {
 			},
 		},
 	});
-};
 
+};

@@ -1,9 +1,8 @@
 const { DataTypes } = require("sequelize");
-const Joi = require("joi");
 // We export the function that define the model
 // This function will automatically receive the Sequelize connection object
 
-module.exports = (sequelize) => {
+module.exports =  (sequelize) => {
 	sequelize.define("Post", {
 		title: {
 			type: DataTypes.STRING,
@@ -33,11 +32,11 @@ module.exports = (sequelize) => {
 				min: 10,
 			},
 		},
-		user_id: {
+		userId: {
 			type: DataTypes.INTEGER,
 			references: {
 				// This is reference to another model
-				model: "User",
+				model: "Users",
 				key: "id",
 			},
 			allowNull: false,
@@ -49,17 +48,17 @@ module.exports = (sequelize) => {
 		image: {
 			type: DataTypes.JSON,
 			allowNull: false,
-			defaultVAlue: {
+			defaultValue: {
 				url: "",
 				publicId: null,
 			},
 		},
 		likes: {
-			type: DataTypes.ARRAY(DataTypes.INTEGER),
+			type: DataTypes.JSON,
 			allowNull: false,
-			defaultVAlue: [],
+			defaultValue: [],
 		},
-	},);
+	});
 };
 
 // Defining the Association

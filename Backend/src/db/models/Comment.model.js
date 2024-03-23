@@ -1,7 +1,6 @@
 const { DataTypes } = require("sequelize");
-const Joi = require("joi");
 
-module.exports = (sequelize) => {
+module.exports =  (sequelize) => {
 	sequelize.define("Comment", {
 		text: {
 			type: DataTypes.STRING,
@@ -10,18 +9,18 @@ module.exports = (sequelize) => {
 		postId: {
 			type: DataTypes.INTEGER,
 			references: {
-				model: "Post",
+				model: "Posts",
 				key: "id",
 			},
 			allowNull: false,
 		},
-		userId: {
-			type: DataTypes.INTEGER,
-			references: {
-				model: "User",
-				key: "id",
-			},
-		},
+		// userId: {
+		// 	type: DataTypes.INTEGER,
+		// 	references: {
+		// 		model: "Users",
+		// 		key: "id",
+		// 	},
+		// },
 		username: {
 			type: DataTypes.STRING,
 			allowNull: false,

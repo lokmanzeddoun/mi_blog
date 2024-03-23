@@ -8,11 +8,13 @@ const sequelize = new Sequelize(
 	{ host: "localhost", dialect: "mysql" }
 );
 
+
 const modelDefiners = [
 	require("./models/Category.model"),
 	require("./models/Comment.model"),
 	require("./models/User.model"),
 	require("./models/Post.model"),
+	require("./models/verificationToken")
 ];
 
 // We define all models according to their files.
@@ -20,6 +22,9 @@ for (const modelDefiner of modelDefiners) {
 	modelDefiner(sequelize);
 }
 
+(async ()=>{
+	await sequelize.sync();
+})()
 // We execute any extra setup after the models are defined, such as adding associations.
 applyExtraSetup(sequelize);
 
